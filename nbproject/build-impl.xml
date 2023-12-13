@@ -64,7 +64,7 @@ is divided into following sections:
         <macrodef name="modulename" uri="http://www.netbeans.org/ns/j2se-project/3">
             <attribute name="property"/>
             <attribute name="sourcepath"/>
-            <sequential>
+            <!--<sequential>
                 <loadresource property="@{property}" quiet="true">
                     <javaresource classpath="@{sourcepath}" name="module-info.java" parentFirst="false"/>
                     <filterchain>
@@ -80,6 +80,7 @@ is divided into following sections:
                     </filterchain>
                 </loadresource>
             </sequential>
+          -->
         </macrodef>
     </target>
     <target depends="-init-modules-supported,-init-macrodef-modulename" if="modules.supported.internal" name="-init-source-module-properties">
