@@ -84,7 +84,7 @@ is divided into following sections:
          
         </macrodef>
     </target>
-   -->
+   
     <target depends="-init-modules-supported,-init-macrodef-modulename" if="modules.supported.internal" name="-init-source-module-properties">
         <fail message="Java 9 support requires Ant 1.10.0 or higher.">
             <condition>
