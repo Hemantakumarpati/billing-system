@@ -32,7 +32,7 @@ is divided into following sections:
                 ======================
                 INITIALIZATION SECTION 
                 ======================
-            -->
+          
     <target name="-pre-init">
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->
@@ -60,7 +60,7 @@ is divided into following sections:
             </not>
         </condition>
     </target>
-   <!--
+   
     <target depends="-init-modules-supported" if="modules.supported.internal" name="-init-macrodef-modulename">
         <macrodef name="modulename" uri="http://www.netbeans.org/ns/j2se-project/3">
             <attribute name="property"/>
