@@ -2,4 +2,11 @@
 <project name="Electricity_Billing_System" default="default" basedir=".">
     <description>Builds, tests, and runs the project Electricity Billing System.</description>
     <import file="nbproject/build-impl.xml"/>
+
+    <target name="-post-jar">
+        <mkdir dir="${dist.dir}/lib"/>
+        <copy todir="${dist.dir}/lib" flatten="true">
+            <path path="${javac.classpath}"/>
+        </copy>
+    </target>
 </project>
