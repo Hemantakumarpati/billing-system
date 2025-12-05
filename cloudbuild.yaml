@@ -17,10 +17,17 @@ steps:
       - '--image'
       - 'gcr.io/$PROJECT_ID/electricity-billing-system:$_COMMIT_SHA'
       - '--region'
-      - 'us-central1' # You can change the region
+      - 'us-central1'
       - '--platform'
       - 'managed'
-      - '--allow-unauthenticated' # Be careful with this for internal apps
+      - '--allow-unauthenticated'
+      - '--timeout'
+      - '300'
+      - '--memory'
+      - '1Gi'
+      - '--cpu'
+      - '2'
+      - '--no-cpu-throttling'
 
 images:
   - 'gcr.io/$PROJECT_ID/electricity-billing-system:$_COMMIT_SHA'
