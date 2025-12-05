@@ -19,13 +19,13 @@ RUN curl -L -o lib/rs2xml.jar https://github.com/patrickwang1/rs2xml/raw/master/
 # Copy project files
 COPY . .
 
-# Create build.properties to override paths
-RUN echo "file.reference.mysql-connector-java-8.0.28.jar=lib/mysql-connector-java-8.0.28.jar" > build.properties && \
-    echo "file.reference.rs2xml.jar=lib/rs2xml.jar" >> build.properties && \
-    echo "libs.CopyLibs.classpath=lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" >> build.properties
+# Create private.properties to override hardcoded paths
+RUN mkdir -p nbproject/private && \
+    echo "file.reference.mysql-connector-java-8.0.28.jar=/app/lib/mysql-connector-java-8.0.28.jar" > nbproject/private/private.properties && \
+    echo "file.reference.rs2xml.jar=/app/lib/rs2xml.jar" >> nbproject/private/private.properties
 
 # Build the project
-RUN ant -Dlibs.CopyLibs.classpath="" clean jar
+RUN ant clean jar
 
 # Stage 2: Runtime with NoVNC
 FROM ubuntu:22.04
