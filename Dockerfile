@@ -60,6 +60,9 @@ COPY --from=builder /app/lib /app/lib
 COPY --from=builder /app/src/icon /app/src/icon
 COPY --from=builder /app/dist /app/dist
 
+# Create supervisor log directory
+RUN mkdir -p /var/log/supervisor
+
 # Copy supervisor configuration
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
