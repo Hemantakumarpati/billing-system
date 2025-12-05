@@ -13,8 +13,8 @@ RUN mkdir -p lib
 # mysql-connector-java
 RUN curl -o lib/mysql-connector-java-8.0.28.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar
 
-# rs2xml.jar - Attempting to download from a public GitHub repository
-RUN curl -L -o lib/rs2xml.jar https://github.com/patrickwang1/rs2xml/raw/master/rs2xml.jar
+# rs2xml.jar - Download from SourceForge
+RUN curl -L -o lib/rs2xml.jar https://sourceforge.net/projects/finalangelsanddemons/files/rs2xml.jar/download
 
 # Copy project files
 COPY . .
